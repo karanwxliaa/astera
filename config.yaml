@@ -1,0 +1,34 @@
+# Default config for atlas_cv_rebounding pilot pipeline
+# You MUST edit the paths below for your environment.
+
+video_path: "data/game.mp4"         # Path to downloaded full-game broadcast
+pbp_path: "data/game_pbp.csv"       # Play-by-play CSV for that game
+
+# Kaggle ShotQuality Rebounding data (download from Kaggle and place here)
+kaggle_train_pbp: "kaggle/train_pbp.csv"
+kaggle_train_locs: "kaggle/train_locs.csv"
+
+# Manual calibration files
+homography_points_path: "calibration/homography_points.csv"
+frame_anchors_path: "calibration/frame_anchors.csv"
+team_map_path: "calibration/team_map.csv"
+
+models_dir: "models"
+output_csv: "outputs/game_shotquality_rebounding.csv"
+
+frame_rate: 30.0
+shot_frame_offset: -3
+
+# Court geometry (ShotQuality/Kaggle)
+hoop_x: 4.0
+hoop_y: 25.0
+restricted_radius: 4.0
+
+paint_x_min: 0.0
+paint_x_max: 19.0
+paint_y_min: 17.0
+paint_y_max: 33.0
+
+# If your broadcast or calibration flips the court orientation, set these to true
+reflect_x: false
+reflect_y: false
